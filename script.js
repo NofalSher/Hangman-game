@@ -28,13 +28,7 @@ function displayWord() {
         .map(letter => `
         <span class="letter"> 
         ${correctLettersArray.includes(letter) ? letter:''}
-        </span
-        `
-        )
-
-        }
-    `
-
+        </span>`)}`
 };
 
 // Execute displayWord on page load
