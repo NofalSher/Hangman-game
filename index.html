@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hangman</h1>
+    <p>Find the hidden word - guess a letter by entering it on your keyboard</p>
+    <div class="game-container">
+        <!-- SVG (scalabale vector graphics) -->
+        <!-- svg containing hangman and platform -->
+        <svg height="250" class="figure-container">
+            <!-- line has four values x1,x2,y1,y2 -->
+            <!-- Hnging Platform for hangman -->
+            <line x1='60' y1='20' x2='140' y2='20' />
+            <line x1='60' y1='20' x2='60' y2='230' />
+            <line x1='140' y1='20' x2='140' y2='50' />
+            <line x1='30' y1='230' x2='90' y2='230' />
+            <!-- Circle to make head of hangman -->
+            <!-- circle takes 3 values. cx is for circle horizontal center point. cy tells vertical center point . R tells radius value -->
+            <circle cx="140" cy="70" r="20" class="figure-part" />
+
+            <!-- Making body -->
+            <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
+            <!-- Making arms -->
+            <line x1="140" y1="105" x2="120" y2="150" class="figure-part" />
+            <line x1="140" y1="105" x2="160" y2="150" class="figure-part" />
+
+            <!-- Making legs -->
+            <line x1="140" y1="150" x2="110" y2="190" class="figure-part" />
+            <line x1="140" y1="150" x2="170" y2="190" class="figure-part" />
+        </svg>
+        <div class="incorrect-letter-container">
+            <div id="incorrect-letters">
+                <!-- All incorrect guesses by user . At start it will be blank and words will be added to it through javascript, For now we have added some dummy words -->
+               
+            </div>
+        </div>
+        <div class="word" id="word">
+            <!-- Actual word that user is to guess . At start it will be blank and words will be added to it through javascript, For now we have added some dummy words  -->
+            
+        </div>
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2 id="final-message">
+                </h2>
+                <button id="play-btn">Play Again</button>
+            </div>
+        </div>
+
+    </div>
+            <!-- This is for notification if user had entered same word before -->
+            <div class="notification-container">
+                <p>It looks that you have alreday entered that word before. Please try another letter
+                </p>
+            </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
